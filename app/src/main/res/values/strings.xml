@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Mood Detector</string>
+    <string name="welcome">Welcome to the Mood Detector</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="btn_ok">OK</string>
+    <string name="btn_exit">Exit</string>
+    <string name="btn_finish">Finish</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_previous">Previous</string>
+    <string name="btn_retry">Retry</string>
+    <string name="slogan">Mood Detector</string>
+    <string name="result_text">Do you want o continue</string>
+    <string name="start_now">Start Now</string>
+    <string name="enter_name2">Enter Name</string>
+    <string name="label_message">Message</string>
+    <string-array name="question">
+        <item>Being full of nervous energy or moving much less than usual.,Never,Some of the time,Most of the time,Nearly all the time,Meditation</item>
+        <item>Poor appetite or overeating.,Never,Some of the time,Most of the time,Nearly all the time,Video</item>
+        <item>Feeling low or "Under a cloud".,Never,Some of the time,Most of the time,Nearly all the time,Quotes</item>
+        <item>Oversleeping or struggling to get to sleep.,Never,Some of the time,Most of the time,Nearly all the time,Music</item>
+        <item>Trouble concentrating on things such as reading the newspaper or watching television.,Never,Some of the time,Most of the time,Nearly all the time,Jokes</item>
+    </string-array>
+</resources>

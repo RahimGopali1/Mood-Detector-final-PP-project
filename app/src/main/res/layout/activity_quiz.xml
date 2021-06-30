@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradent_bg2"
+    tools:context=".SecondActivity">
+
+    <Button
+        android:id="@+id/skip_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="skip"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="360dp"
+        android:layout_height="361dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.37">
+
+
+        <TextView
+            android:id="@+id/tv_activity_quiz_question"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_marginBottom="15sp"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rg_activity_main_option"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioButton
+                android:id="@+id/rb_activity_quiz_opt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="15sp"
+                android:text="RadioButton"
+                android:textColor="@drawable/text_color"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#000000"
+                android:textCursorDrawable="@color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rb_activity_quiz_opt2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="15sp"
+                android:text="RadioButton"
+                android:textColor="@drawable/text_color"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#000000"
+                android:textCursorDrawable="@color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rb_activity_quiz_opt3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="15sp"
+                android:text="RadioButton"
+                android:textColor="@drawable/text_color"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#000000"
+                android:textCursorDrawable="@color/black"
+                android:textSize="24sp" />
+
+            <RadioButton
+                android:id="@+id/rb_activity_quiz_opt4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:elevation="4dp"
+                android:paddingLeft="15sp"
+                android:text="RadioButton"
+                android:textColor="@drawable/text_color"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorLink="#000000"
+                android:textCursorDrawable="@color/black"
+                android:textSize="24sp" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="278dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="157dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginRight="46dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.702">
+
+        <Button
+            android:id="@+id/btn_activity_quiz_previous"
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15sp"
+            android:layout_marginRight="15sp"
+            android:layout_weight="1"
+            android:text="@string/btn_previous"
+            android:textSize="18sp"
+            app:backgroundTint="#FF5722" />
+
+        <Button
+            android:id="@+id/btn_activity_quiz_next"
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_next"
+            android:textSize="18sp"
+            app:backgroundTint="#03A9F4" />
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

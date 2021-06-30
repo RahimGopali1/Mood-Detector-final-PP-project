@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "432705486477",
+    "firebase_url": "https://quote-activity-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "quote-activity",
+    "storage_bucket": "quote-activity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432705486477:android:b5f6b79ed4437d028c6cc4",
+        "android_client_info": {
+          "package_name": "com.example.admin_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432705486477-h8df7p4jhvrred3b9utgvusss1ur50cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChI5pO9k-8RZXwEcMEKif_0PxFBP3nduQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432705486477-h8df7p4jhvrred3b9utgvusss1ur50cc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432705486477:android:d90a0ade5a1c88348c6cc4",
+        "android_client_info": {
+          "package_name": "com.example.mood_detector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432705486477-h8df7p4jhvrred3b9utgvusss1ur50cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChI5pO9k-8RZXwEcMEKif_0PxFBP3nduQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432705486477-h8df7p4jhvrred3b9utgvusss1ur50cc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432705486477:android:39a493a55dd207518c6cc4",
+        "android_client_info": {
+          "package_name": "com.example.vdodemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432705486477-h8df7p4jhvrred3b9utgvusss1ur50cc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChI5pO9k-8RZXwEcMEKif_0PxFBP3nduQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432705486477-h8df7p4jhvrred3b9utgvusss1ur50cc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

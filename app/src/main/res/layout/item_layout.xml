@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="#0357CC"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    >
+
+    <com.ramotion.foldingcell.FoldingCell
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/folding_cell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        ​
+        <FrameLayout
+            android:id="@+id/cell_content_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tv_content"
+                android:text="Content Here "
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+        </FrameLayout>
+        ​
+        <FrameLayout
+            android:id="@+id/cell_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="#FFFFFF"
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_launcher_background"/>
+
+                <TextView
+                    android:layout_toRightOf="@+id/imageView"
+                    android:id="@+id/tv_title"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:gravity="center"
+                    android:text="Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@android:color/white" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+        ​
+    </com.ramotion.foldingcell.FoldingCell>
+
+</LinearLayout>
