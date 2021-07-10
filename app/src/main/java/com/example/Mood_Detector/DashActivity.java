@@ -12,7 +12,7 @@ import com.example.Mood_Detector.activity.SignUpActivity;
 import com.example.Mood_Detector.ui.chatbotActivity;
 
 public class DashActivity extends AppCompatActivity {
-    Button btn_bot, btn_chat, btn_music, btn_video, btn_joke, btn_quote, btn_medit, btn_test;
+    Button btn_bot, btn_chat, btn_music, btn_video, btn_joke, btn_quote, btn_medit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +25,6 @@ public class DashActivity extends AppCompatActivity {
         btn_joke = (Button) findViewById(R.id.buttonJoke);
         btn_quote = (Button) findViewById(R.id.buttonQuotes);
         btn_medit = (Button) findViewById(R.id.buttonMeditation);
-        btn_test = (Button) findViewById(R.id.buttontest);
 
         btn_bot.setOnClickListener(new View.OnClickListener()
         {
@@ -77,20 +76,10 @@ public class DashActivity extends AppCompatActivity {
                 openVideoActivity();
             }
         });
-        btn_test.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                openmaindashActivity();
-            }
-        });
 
     }
 
-    private void openmaindashActivity() {
-        Intent intent = new Intent(this, MainDashActivity.class);
-        startActivity(intent);
-    }
+
 
     private void openLoginActivity() {
         Intent intent = new Intent(this, SignUpActivity.class);

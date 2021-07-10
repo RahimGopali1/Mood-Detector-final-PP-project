@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,7 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.Mood_Detector.activity.LoginActivity;
+import com.example.Mood_Detector.activity.SignUpActivity;
 import com.example.Mood_Detector.ui.chatbotActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -42,9 +46,12 @@ public class MainDashActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        String [] answers = getIntent().getStringArrayExtra("answers");
+        SharedPreferences preference = getApplicationContext().getSharedPreferences("Test",  0);
+        String answersAll = preference.getString("answers", "");
+        String[] answers = answersAll.split(",");
+        //String [] answers = getIntent().getStringArrayExtra("answers");
         Log.d("TAG", "From dash"+answers[0]);
+        Log.d("TAG", "All answers"+ answersAll);
 
         rcv = (RecyclerView)findViewById(R.id.rclview);
         adapter = new myadapter(dataqueue(answers),getApplicationContext());
@@ -80,10 +87,10 @@ public class MainDashActivity extends AppCompatActivity {
             }
         }
         if (display) {
-        DataModel ob3 = new DataModel();
-        ob3.setHeader("Music");
-        ob3.setImgname(R.drawable.music);
-        holder.add(ob3);
+            DataModel ob3 = new DataModel();
+            ob3.setHeader("Music");
+            ob3.setImgname(R.drawable.music);
+            holder.add(ob3);
         }
         display = false;
 
@@ -96,10 +103,10 @@ public class MainDashActivity extends AppCompatActivity {
             }
         }
         if (display) {
-        DataModel ob4 = new DataModel();
-        ob4.setHeader("Video");
-        ob4.setImgname(R.drawable.video);
-        holder.add(ob4);
+            DataModel ob4 = new DataModel();
+            ob4.setHeader("Video");
+            ob4.setImgname(R.drawable.video);
+            holder.add(ob4);
         }
         display = false;
 
@@ -128,10 +135,10 @@ public class MainDashActivity extends AppCompatActivity {
             }
         }
         if (display) {
-        DataModel ob6 = new DataModel();
-        ob6.setHeader("Quotes");
-        ob6.setImgname(R.drawable.quotes);
-        holder.add(ob6);
+            DataModel ob6 = new DataModel();
+            ob6.setHeader("Quotes");
+            ob6.setImgname(R.drawable.quotes);
+            holder.add(ob6);
         }
         display = false;
 
@@ -157,7 +164,7 @@ public class MainDashActivity extends AppCompatActivity {
     }
 
     //Adapter
-    public class myadapter extends RecyclerView.Adapter<myviewholder> {
+    public class myadapter extends RecyclerView.Adapter<myadapter.myviewholder> {
         ArrayList<DataModel> data;
         Context context;
         public myadapter(ArrayList<DataModel> data, Context context) {
@@ -194,37 +201,68 @@ public class MainDashActivity extends AppCompatActivity {
         public int getItemCount() {
             return data.size();
         }
+
+        public class myviewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+            ImageView img;
+            TextView t1,label;
+            public static final String TAG = "dash_test";
+            public myviewholder(@NonNull View itemView) {
+                super(itemView);
+                img = (ImageView)itemView.findViewById(R.id.img1);
+                t1 = (TextView)itemView.findViewById(R.id.t1);
+                label=(TextView)itemView.findViewById(R.id.label_tv);
+                itemView.setClickable(true);
+                itemView.setOnClickListener(this);
+
+
+//                img.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        Toast.makeText(context,"The Item Clicked is: "+ getBindingAdapterPosition(),Toast.LENGTH_SHORT).show();
+//                        Log.d("TAG","Image Clicked");
+//                        if (label.getText().toString().equals("MeditationActivity")){
+//
+//                        }
+//
+//                    }
+//                });
+            }
+
+            @Override
+            public void onClick(View v) {
+                final Intent intent;
+                switch (getBindingAdapterPosition()) {
+                    case 0:
+                        intent = new Intent(context, chatbotActivity.class);
+                        break;
+                    case 1:
+                        intent = new Intent(context, SignUpActivity.class);
+                        break;
+                    case 2:
+                        intent = new Intent(context, MusicActivity.class);
+                        break;
+                    case 3:
+                        intent = new Intent(context, VideoActivity.class);
+                        break;
+                    case 4:
+                        intent = new Intent(context, jokeActivity.class);
+                        break;
+                    case 5:
+                        intent = new Intent(context, QuotesActivity.class);
+                        break;
+                    case 6:
+                        intent = new Intent(context, MeditationActivity.class);
+                        break;
+                    default:
+                        intent = new Intent(context, chatbotActivity.class);
+                }
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+                Toast.makeText(context,"The Item Clicked is: "+ getBindingAdapterPosition(),Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     //View holder
-
-    public class myviewholder extends RecyclerView.ViewHolder {
-
-        ImageView img;
-        TextView t1,label;
-        MainDashActivity activity = new MainDashActivity();
-        public myviewholder(@NonNull View itemView) {
-            super(itemView);
-            img = (ImageView)itemView.findViewById(R.id.img1);
-            t1 = (TextView)itemView.findViewById(R.id.t1);
-            label=(TextView)itemView.findViewById(R.id.label_tv);
-
-
-            img.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Log.d("TAG","Image Clicked");
-                    if (label.getText().toString().equals("MeditationActivity")){
-                        activity.openMeditationActivity();
-                    }
-
-                }
-            });
-        }
-
-    }
-    private void openMeditationActivity() {
-        Intent intent = new Intent(this, MeditationActivity.class);
-        startActivity(intent);
-    }
 }

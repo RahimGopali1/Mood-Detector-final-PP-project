@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -45,6 +46,9 @@ public class SecondActivity extends AppCompatActivity {
         btn_previous = (Button) findViewById(R.id.btn_activity_quiz_previous);
         btn_skip = (Button) findViewById(R.id.skip_btn);
 
+        SharedPreferences preference = getApplicationContext().getSharedPreferences("Test",  0);
+        SharedPreferences.Editor editor = preference.edit();
+
         questionList = getQuestionList();
         if(savedInstanceState != null) {
             int i = savedInstanceState.getInt("quizIndex", 0);
@@ -62,8 +66,22 @@ public class SecondActivity extends AppCompatActivity {
                 }
                 getScore();
                 if(questionNo==4) {
+                    StringBuilder sb = new StringBuilder();
+                    for(int j = 0; j < answers.length; j++) {
+                        if(j == answers.length-1) {
+                            sb.append(answers[j]);
+                        }
+                        else {
+                            sb.append(answers[j]).append(",");
+                        }
+
+                    }
+
+                    Log.d("TAG", "From secondActivity: "+ sb.toString());
+                    editor.putString("answers", sb.toString());
+                    editor.commit();
                     Intent intent = new Intent(SecondActivity.this, MainDashActivity.class);
-                    intent.putExtra("answers",answers);
+                    //intent.putExtra("answers",answers);
                     startActivity(intent);
                     finish();
                 }
@@ -85,13 +103,13 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
         btn_skip.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            openDashActivity();
-        }
-    });
+            @Override
+            public void onClick(View v) {
+                openDashActivity();
+            }
+        });
 
-}
+    }
     public void openDashActivity() {
         Intent intent = new Intent(this, DashActivity.class);
         startActivity(intent);

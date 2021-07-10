@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,11 +36,18 @@ public class NameActivity extends AppCompatActivity {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editor.putString("username",txtName.getText().toString());
-                editor.commit();
-                Intent intent = new Intent(NameActivity.this, SecondActivity.class);
-                startActivity(intent);
-                finish();
+                if (TextUtils.isEmpty(txtName.getText()))
+                {
+                    txtName.setError("Username is empty");
+                    txtName.requestFocus();
+                }
+                else {
+                    editor.putString("username", txtName.getText().toString());
+                    editor.commit();
+                    Intent intent = new Intent(NameActivity.this, SecondActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
     }
